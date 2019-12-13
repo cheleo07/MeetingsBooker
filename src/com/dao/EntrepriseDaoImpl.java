@@ -49,7 +49,7 @@ public class EntrepriseDaoImpl implements EntrepriseDao{
             }
             valeursAutoGenerees = preparedStatement.getGeneratedKeys();
             if ( valeursAutoGenerees.next() ) {
-            	entreprise.setIdent( valeursAutoGenerees.getLong( 1 ) );//String->Long
+            	entreprise.setIdent( valeursAutoGenerees.getLong( 1 ) );//String->Long error
             } else {
                 throw new DAOException( "Échec de la création de l'entreprise en base, aucun ID auto-généré retourné." );
             }
@@ -118,8 +118,8 @@ public class EntrepriseDaoImpl implements EntrepriseDao{
             while ( resultSet.next() ) {
             	
             	entreprise = map( resultSet );
-                System.out.println("nom:"+ utilisateur.getNom());
-                listeutilisateurs.add(utilisateur);
+                System.out.println("nom:"+ entreprise.getNom());
+                listeentreprise.add(entreprise);
             }
         } catch ( SQLException e ) {
             throw new DAOException( e );
@@ -127,7 +127,7 @@ public class EntrepriseDaoImpl implements EntrepriseDao{
             fermeturesSilencieuses( resultSet, preparedStatement, connexion );
         }
 
-        return listeutilisateurs;
+        return listeentreprise;
     }
 
     
@@ -136,14 +136,18 @@ public class EntrepriseDaoImpl implements EntrepriseDao{
      * mapping) entre une ligne issue de la table des utilisateurs (un
      * ResultSet) et un bean Utilisateur.
      */
-    private static Utilisateur map( ResultSet resultSet ) throws SQLException {
-        Utilisateur utilisateur = new Utilisateur();
-        utilisateur.setId( resultSet.getLong( "id" ) );
-        utilisateur.setEmail( resultSet.getString( "email" ) );
-        utilisateur.setMotDePasse( resultSet.getString( "mot_de_passe" ) );
-        utilisateur.setNom( resultSet.getString( "nom" ) );
-        utilisateur.setDateInscription( resultSet.getTimestamp( "date_inscription" ) );
-        return utilisateur;
+    private static Entreprise map( ResultSet resultSet ) throws SQLException {
+    	Entreprise entreprise = new Entreprise();
+    	entreprise.setIdent( resultSet.getLong( "ident" ) );
+    	entreprise.setNoment( resultSet.getString( "noment" ) );
+    	entreprise.setAdresseent( resultSet.getString( "adresseent" ) );
+    	entreprise.setTelent( resultSet.getString( "telent" ) );
+    	entreprise.setEmail( resultSet.getString( "email" ) );
+    	entreprise.setNom( resultSet.getString( "nom" ) );
+    	entreprise.setPrenom( resultSet.getString( "prenom" ) );
+    	entreprise.setContacteo_n( resultSet.getBoolean( "contacteo_n" ) );
+    	entreprise.setAcontacteo_n( resultSet.getBoolean( "acontacteo_n" ) );
+        return entreprise;
     }
 	
 }

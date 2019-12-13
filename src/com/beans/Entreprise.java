@@ -1,7 +1,7 @@
 package com.beans;
 
 public class Entreprise {
-	private String ident;
+	private long ident;
 	private String noment;
 	private String adresseent;
 	private String telent;
@@ -12,16 +12,12 @@ public class Entreprise {
 	private Boolean contacteo_n;
 	private Boolean acontacteo_n;
 	private String typeinscrirption;
-	//reservant
-	private String numcb;
-	private String nomtitulaire;
-	private String code;
 	private String datefinvalidite;
 	
-	public String getIdent() {
+	public long getIdent() {
 		return ident;
 	}
-	public void setIdent(String ident) {
+	public void setIdent(long ident) {
 		this.ident=ident;
 	}
 	
@@ -87,33 +83,4 @@ public class Entreprise {
 	public void setTypeinscrirption(String typeinscrirption) {
 		this.typeinscrirption=typeinscrirption;
 	}
-	//reservant
-	public String getNumcb() {
-		return numcb;
-	}
-	public void setNumcb(String numcb) {
-		this.numcb=numcb;
-	}
-	
-	public String getNomtitulaire() {
-		return nomtitulaire;
-	}
-	public void setNomtitulaire(String nomtitulaire) {
-		this.nomtitulaire=nomtitulaire;
-	}
-	
-	public String getCode() {
-		return code;
-	}
-	public void setCode(String code) {
-		this.code=code;
-	}
-	
-	public String getDatefinvalidite() {
-		return datefinvalidite;
-	}
-	public void setDatefinvalidite(String datefinvalidite) {
-		this.datefinvalidite=datefinvalidite;
-	}
-	
 }

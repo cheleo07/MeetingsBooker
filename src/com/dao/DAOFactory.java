@@ -134,9 +134,9 @@ public class DAOFactory {
 
      */
 
-    public UtilisateurDao getUtilisateurDao() {
+    public EntrepriseDao getEntrepriseDao() {
 
-        return new UtilisateurDaoImpl( this );
+        return new EntrepriseDaoImpl( this );
 
     }
 
