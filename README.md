@@ -17,10 +17,10 @@ projet sio2d JEE
 
 Pour accéder a la base de donnée, importer le script dans images/MLR4.SQL dans PostGreSql (mdp: postgres)
 ## Screen MEA
-
+![Screen MEA](images/MEA.PNG)
 Petit screen des familles du MEA si ça peut aider: Screen MEA Screen MEA
 ## Charte graphique
-
+![Screen charte](images/MEA.PNG)
 Charte graphique globale du projet Screen CHARTE
 ## Contexte
 
