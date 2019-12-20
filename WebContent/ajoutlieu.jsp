@@ -25,7 +25,7 @@
 		   	
 		%>
 		
-        <form method="post" action="inscription">
+        <form method="post" action="ajoutlieu">
 
             <fieldset>
 

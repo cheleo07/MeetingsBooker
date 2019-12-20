@@ -29,6 +29,15 @@
 	<url-pattern>/inscription</url-pattern>
 </servlet-mapping>
 
+<servlet>
+	<servlet-name>ajoutlieu</servlet-name>
+	<servlet-class>com.servlets.AjoutLieu</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>ajoutlieu</servlet-name>
+	<url-pattern>/ajoutlieu</url-pattern>
+</servlet-mapping>
+
 
 <listener>
     <listener-class>com.config.InitialisationDaoFactory</listener-class>
