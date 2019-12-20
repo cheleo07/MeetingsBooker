@@ -139,5 +139,11 @@ public class DAOFactory {
         return new EntrepriseDaoImpl( this );
 
     }
+    
+    public LieuDao getLieuDao() {
+
+        return new LieuDaoImpl( this );
+
+    }
 
 }

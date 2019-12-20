@@ -12,7 +12,6 @@ import java.util.ArrayList;
 import com.beans.Entreprise;
 
 public class EntrepriseDaoImpl implements EntrepriseDao{
-	private static final String SQL_SELECT_PAR_EMAIL = "SELECT id, email, nom, mot_de_passe, date_inscription FROM Utilisateur WHERE email = ?";
     private static final String SQL_SELECT = "SELECT id, email, nom, mot_de_passe, date_inscription FROM Utilisateur";
     private static final String SQL_INSERT           = "INSERT INTO Utilisateur (email, mot_de_passe, nom, date_inscription) VALUES (?, ?, ?, NOW())";
 

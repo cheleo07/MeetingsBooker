@@ -2,8 +2,6 @@
 <%@page import="com.beans.Entreprise"%>
 <%@page import="java.util.ArrayList"%>
 
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,9 +15,11 @@
 	Liste des entreprises:
        <table border=1>
        <tr>
-       		<td> nom </td>
-       		<td> email </td>
-       		<td> date d'inscription </td>
+       		<td> nom entreprise </td>
+       		<td> adresse entreprise </td>
+       		<td> nom loueur</td>
+       		<td> prenom loueur</td>
+       		<td> type d'inscription </td>
        </tr>
         <% ArrayList<Entreprise> listeEntreprise=(ArrayList<Entreprise>) request.getAttribute("listeentreprise"); %>
        
@@ -31,16 +31,24 @@
        		<tr>
        			<td>
        		
-    				<% out.println(entreprise.getNom()); %>
+    				<% out.println(entreprise.getNoment()); %>
     			</td>
     			<td>
     	
-    				<% out.println(entreprise.getEmail()); %>
+    				<% out.println(entreprise.getAdresseent()); %>
     			</td>
     			
     			<td>
     	
-    				<% out.println(entreprise.getDateInscription()); %>
+    				<% out.println(entreprise.getNom()); %>
+    			</td>
+    			<td>
+    	
+    				<% out.println(entreprise.getPrenom()); %>
+    			</td>
+    			<td>
+    	
+    				<% out.println(entreprise.getTypeinscrirption()); %>
     			</td>
       		 </tr>
 	   <%		}

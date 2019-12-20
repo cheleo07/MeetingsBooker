@@ -12,7 +12,7 @@ public class Entreprise {
 	private Boolean contacteo_n;
 	private Boolean acontacteo_n;
 	private String typeinscrirption;
-	private String datefinvalidite;
+	//private String datefinvalidite;
 	
 	public long getIdent() {
 		return ident;

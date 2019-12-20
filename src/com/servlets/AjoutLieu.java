@@ -2,27 +2,17 @@ package com.servlets;
 
 import java.io.IOException;
 
-
 import javax.servlet.ServletException;
-
 import javax.servlet.http.HttpServlet;
-
 import javax.servlet.http.HttpServletRequest;
-
 import javax.servlet.http.HttpServletResponse;
 
-
-import com.beans.Utilisateur;
-
+import com.beans.Lieu;
 import com.dao.DAOFactory;
+import com.dao.LieuDao;
 
-import com.dao.UtilisateurDao;
+public class AjoutLieu extends HttpServlet{
 
-
-
-
-public class Inscription extends HttpServlet {
-	
 	private static final String CHAMP_EMAIL      = "email";
 	private static final String CHAMP_PASS       = "motdepasse";
 	private static final String CHAMP_CONF       = "confirmation";
@@ -30,20 +20,20 @@ public class Inscription extends HttpServlet {
 
     public static final String CONF_DAO_FACTORY = "daofactory";
 
-    public static final String ATT_USER         = "utilisateur";
+    public static final String ATT_USER         = "lieu";
     public static final String ATT_VALIDATION         = "validation";
 
-        public static final String VUE              = "/inscription.jsp";
+        public static final String VUE              = "/ajoutlieu.jsp";
 
 
-    private UtilisateurDao     utilisateurDao;
+    private LieuDao lieudao;
 
 
     public void init() throws ServletException {
 
         /* Récupération d'une instance de notre DAO Utilisateur */
 
-        this.utilisateurDao = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getUtilisateurDao();
+        this.lieudao = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getLieuDao();
 
     }
 
@@ -61,21 +51,25 @@ public class Inscription extends HttpServlet {
     	
     	/* Traitement de la requête et création du bean en résultant */
     	
-    	String email =  request.getParameter( CHAMP_EMAIL  );
-        String motDePasse =  request.getParameter ( CHAMP_PASS );
-        String confirmation =  request.getParameter ( CHAMP_CONF );
-        String nom =  request.getParameter ( CHAMP_NOM );
+    	String libelle =  request.getParameter( CHAMP_NOM );
+        String coordx =  request.getParameter ( CHAMP_NOM );
+        String coordy =  request.getParameter ( CHAMP_NOM );
+        //String annulation =  request.getParameter ( CHAMP_CONF );
+        String etoiles =  request.getParameter ( CHAMP_NOM );
+        String descriptif =  request.getParameter ( CHAMP_NOM );
         
         String validation;
         
-        Utilisateur utilisateur = new Utilisateur();
-        if ((email!=null)&&(email.trim().length()!=0)&&(motDePasse!=null)&&(motDePasse.trim().length()!=0)&&(confirmation!=null)&&(confirmation.trim().length()!=0)&&(nom!=null)&&(nom.trim().length()!=0))
+        Lieu lieu = new Lieu();
+        if ((libelle!=null)&&(libelle.trim().length()!=0)&&(coordx!=null)&&(coordx.trim().length()!=0)&&(coordy!=null)&&(coordy.trim().length()!=0)&&(etoiles!=null)&&(etoiles.trim().length()!=0)&&(descriptif!=null)&&(descriptif.trim().length()!=0))
         {
-        	utilisateur.setEmail(email);
-        	utilisateur.setMotDePasse(motDePasse);
-        	utilisateur.setNom(nom);
+        	lieu.setLibellelieu(libelle);
+        	lieu.setCoordx(coordx);
+        	lieu.setCoordy(coordy);
+        	lieu.setNbetoiles(etoiles);
+        	lieu.setDescriptif(descriptif);
         	
-        	utilisateurDao.creer( utilisateur );
+        	lieudao.creer( lieu );
         	
         	validation="succes";
         }
@@ -87,11 +81,10 @@ public class Inscription extends HttpServlet {
 
         /* Stockage  du bean dans l'objet request */
         request.setAttribute( ATT_VALIDATION, validation );
-        request.setAttribute( ATT_USER, utilisateur );
+        request.setAttribute( ATT_USER, lieu );
 
         /*Routage vers la vue d'inscription*/
         this.getServletContext().getRequestDispatcher( VUE ).forward( request, response );
 
     }
-
 }

@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -11,7 +12,7 @@ import com.beans.Entreprise;
 import com.dao.DAOFactory;
 import com.dao.EntrepriseDao;
 
-public class ListeEntreprise {
+public class ListeEntreprise extends HttpServlet{
 	
 	public static final String CONF_DAO_FACTORY = "daofactory";
 
@@ -30,7 +31,6 @@ public class ListeEntreprise {
         this.entrepriseDao = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getEntrepriseDao();
 
     }
-
 
     public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
 
