@@ -21,11 +21,11 @@
        		<td> email </td>
        		<td> date d'inscription </td>
        </tr>
-        <% ArrayList<Entreprise> listeinscrits=(ArrayList<Entreprise>) request.getAttribute("listeentreprise"); %>
+        <% ArrayList<Entreprise> listeEntreprise=(ArrayList<Entreprise>) request.getAttribute("listeentreprise"); %>
        
-       <% if (listeinscrits!=null)
+       <% if (listeEntreprise!=null)
     	   {
-    	   	for (Entreprise entreprise:listeentreprise) { %>
+    	   	for (Entreprise entreprise:listeEntreprise) { %>
     	   
        
        		<tr>
