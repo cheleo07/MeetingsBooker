@@ -12,21 +12,12 @@
  
 
 <servlet>
-	<servlet-name>listeinscrits</servlet-name>
-	<servlet-class>com.servlets.ListeInscrits</servlet-class>
+	<servlet-name>listeentreprise</servlet-name>
+	<servlet-class>com.servlets.Listeentreprise</servlet-class>
 </servlet>
 <servlet-mapping>
-	<servlet-name>listeinscrits</servlet-name>
-	<url-pattern>/listeinscrits</url-pattern>
-</servlet-mapping>
-
-<servlet>
-	<servlet-name>inscription</servlet-name>
-	<servlet-class>com.servlets.Inscription</servlet-class>
-</servlet>
-<servlet-mapping>
-	<servlet-name>inscription</servlet-name>
-	<url-pattern>/inscription</url-pattern>
+	<servlet-name>listeentreprise</servlet-name>
+	<url-pattern>/listeentreprise</url-pattern>
 </servlet-mapping>
 
 <servlet>
