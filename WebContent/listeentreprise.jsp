@@ -13,6 +13,7 @@
     <body>
    
 	Liste des entreprises:
+       <br></br>
        <table border=1>
        <tr>
        		<td> nom entreprise </td>
@@ -26,7 +27,7 @@
        <% if (listeEntreprise!=null)
     	   {
     	   	for (Entreprise entreprise:listeEntreprise) { %>
-    	   
+    	   	
        
        		<tr>
        			<td>
@@ -54,9 +55,23 @@
 	   <%		}
     	   }
 	   %>
+	   </table>
+	   <br></br>
+	   Selectionnez une entreprise:
+	   <br></br>
+		<form>
+		<select>
+			<% ArrayList<Entreprise> listeEntreprises=(ArrayList<Entreprise>) request.getAttribute("listentreprise"); %>
        
-       
-       </table>
+       <% if (listeEntreprise!=null)
+    	   {
+    	   	for (Entreprise entreprise:listeEntreprise) { %>
+    	   	<option><% out.println(entreprise.getNoment()); %> <% out.println(entreprise.getAdresseent()); %></option>
+	   <%		}
+    	   }
+	   %>
+		</select>
+		</form>
 	
 <body>
 
