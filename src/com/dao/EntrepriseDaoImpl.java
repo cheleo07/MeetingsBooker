@@ -117,7 +117,7 @@ public class EntrepriseDaoImpl implements EntrepriseDao{
             while ( resultSet.next() ) {
             	
             	entreprise = map( resultSet );
-                System.out.println("nom:"+ entreprise.getNom());
+                System.out.println("nom:"+ entreprise.getNom()+" "+"prénom:"+" "+entreprise.getPrenom()+" "+"nom entreprise:"+entreprise.getNoment()+" "+"adresse:"+entreprise.getAdresseent()+" "+"type:"+entreprise.getTypeinscrirption());
                 listeentreprise.add(entreprise);
             }
         } catch ( SQLException e ) {
@@ -137,15 +137,11 @@ public class EntrepriseDaoImpl implements EntrepriseDao{
      */
     private static Entreprise map( ResultSet resultSet ) throws SQLException {
     	Entreprise entreprise = new Entreprise();
-    	entreprise.setIdent( resultSet.getLong( "ident" ) );
     	entreprise.setNoment( resultSet.getString( "noment" ) );
     	entreprise.setAdresseent( resultSet.getString( "adresseent" ) );
-    	entreprise.setTelent( resultSet.getString( "telent" ) );
-    	entreprise.setEmail( resultSet.getString( "email" ) );
     	entreprise.setNom( resultSet.getString( "nom" ) );
     	entreprise.setPrenom( resultSet.getString( "prenom" ) );
-    	entreprise.setContacteo_n( resultSet.getBoolean( "contacteo_n" ) );
-    	entreprise.setAcontacteo_n( resultSet.getBoolean( "acontacteo_n" ) );
+    	entreprise.setTypeinscrirption( resultSet.getString( "typeinscirption" ) );
         return entreprise;
     }
 	

@@ -16,9 +16,9 @@ public class ListeEntreprise extends HttpServlet{
 	
 	public static final String CONF_DAO_FACTORY = "daofactory";
 
-    public static final String ATT_LISTUSER         = "listeentreprise";
+    public static final String ATT_LISTUSER = "listentreprise";
 
-    public static final String VUE              = "/listeentreprise.jsp";
+    public static final String VUE = "/listeentreprise.jsp";
 
 
     private EntrepriseDao     entrepriseDao;
@@ -26,11 +26,12 @@ public class ListeEntreprise extends HttpServlet{
 
     public void init() throws ServletException {
 
-        /* Récupération d'une instance de notre DAO Utilisateur */
+        /* Récupération d'une instance de la DAO Entreprise */
 
         this.entrepriseDao = ( (DAOFactory) getServletContext().getAttribute( CONF_DAO_FACTORY ) ).getEntrepriseDao();
 
     }
+    
 
     public void doGet( HttpServletRequest request, HttpServletResponse response ) throws ServletException, IOException {
 

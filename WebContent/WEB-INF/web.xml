@@ -13,7 +13,7 @@
 
 <servlet>
 	<servlet-name>listeentreprise</servlet-name>
-	<servlet-class>com.servlets.Listeentreprise</servlet-class>
+	<servlet-class>com.servlets.ListeEntreprise</servlet-class>
 </servlet>
 <servlet-mapping>
 	<servlet-name>listeentreprise</servlet-name>

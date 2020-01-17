@@ -21,7 +21,7 @@
        		<td> prenom loueur</td>
        		<td> type d'inscription </td>
        </tr>
-        <% ArrayList<Entreprise> listeEntreprise=(ArrayList<Entreprise>) request.getAttribute("listeentreprise"); %>
+        <% ArrayList<Entreprise> listeEntreprise=(ArrayList<Entreprise>) request.getAttribute("listentreprise"); %>
        
        <% if (listeEntreprise!=null)
     	   {
